@@ -224,7 +224,7 @@ truthforge-ai/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/truthforge-ai.git
+git clone https://github.com/Krutikakhamkar-7/truthforge-ai.git
 ```
 
 ## Backend
@@ -261,32 +261,6 @@ Backend
 
 ---
 
-# 📷 Screenshots
-
-### Home Page
-
-(Add Screenshot)
-
----
-
-### Dashboard
-
-(Add Screenshot)
-
----
-
-### Report
-
-(Add Screenshot)
-
----
-
-### PDF Export
-
-(Add Screenshot)
-
----
-
 # 📈 Workflow
 
 1. User enters claim
@@ -314,10 +288,10 @@ Backend
 
 | Name | Role |
 |------|------|
-| Member 1 | Research Agent |
-| Member 2 | Evidence Collector & Verification |
-| Member 3 | Hallucination Detection |
-| Member 4 | Frontend Dashboard & Report UI |
+| Nivrut Chavan | Research Agent |
+| Dnyaneshwari Hande | Evidence Collector & Verification |
+| Siddhesh Devre | Hallucination Detection |
+| Krutika Khamkar | Frontend Dashboard & Report UI |
 
 ---
 
