@@ -1,0 +1,11 @@
+project/
+│
+├── app.py
+├── orchestrator.py
+├── planner.py
+├── state.py
+├── prompts.py
+├── agents/
+│      research.py
+│
+└── requirements.txt
