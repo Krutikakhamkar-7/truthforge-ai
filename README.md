@@ -1,4 +1,4 @@
-# 🧠 TruthForge AI – Multi-Agent Fact Verification System
+# 🧠 Veritas– Multi-Agent Fact Verification System
 
 > AI-powered research and fact verification platform that analyzes claims using multiple intelligent agents, trusted evidence sources, and explainable AI.
 
@@ -11,7 +11,7 @@
 
 # 📖 Overview
 
-TruthForge AI is a Multi-Agent AI system designed to verify factual claims by collecting evidence from trusted sources, analyzing contradictions, calculating confidence scores, and generating explainable reports.
+Veritas is a Multi-Agent AI system designed to verify factual claims by collecting evidence from trusted sources, analyzing contradictions, calculating confidence scores, and generating explainable reports.
 
 Unlike traditional chatbots, TruthForge AI does not rely on a single LLM response. Instead, multiple specialized AI agents collaborate to produce transparent and trustworthy results.
 
@@ -21,7 +21,7 @@ Unlike traditional chatbots, TruthForge AI does not rely on a single LLM respons
 
 AI-generated content often contains hallucinations and misinformation.
 
-TruthForge AI solves this problem by:
+Veritas solves this problem by:
 
 - Collecting evidence from trusted sources
 - Verifying claims
@@ -224,7 +224,7 @@ truthforge-ai/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Krutikakhamkar-7/truthforge-ai.git
+git clone https://github.com/Krutikakhamkar-7/veritas.git
 ```
 
 ## Backend
