@@ -1,90 +1,363 @@
-# Veritas — Fact Verification Dashboard 
+# 🧠 TruthForge AI – Multi-Agent Fact Verification System
 
-Frontend dashboard for the Autonomous Multi-Agent Research & Fact Verification System.
-This covers **only** the Report Generator + Frontend Dashboard responsibility — no
-agent logic or backend code is included.
+> AI-powered research and fact verification platform that analyzes claims using multiple intelligent agents, trusted evidence sources, and explainable AI.
 
-## Stack
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-green)
+![Python](https://img.shields.io/badge/Python-3.11-yellow)
+![License](https://img.shields.io/badge/License-MIT-red)
 
-React 18 (Vite) · Tailwind CSS · Framer Motion · Axios · React Icons · Recharts · jsPDF
+---
 
-## Getting started
+# 📖 Overview
+
+TruthForge AI is a Multi-Agent AI system designed to verify factual claims by collecting evidence from trusted sources, analyzing contradictions, calculating confidence scores, and generating explainable reports.
+
+Unlike traditional chatbots, TruthForge AI does not rely on a single LLM response. Instead, multiple specialized AI agents collaborate to produce transparent and trustworthy results.
+
+---
+
+# 🚀 Problem Statement
+
+AI-generated content often contains hallucinations and misinformation.
+
+TruthForge AI solves this problem by:
+
+- Collecting evidence from trusted sources
+- Verifying claims
+- Detecting contradictions
+- Calculating confidence scores
+- Providing explainable reports with citations
+
+---
+
+# 🏗️ System Architecture
+
+```
+
+User Query
+│
+▼
+Research Agent
+│
+▼
+Evidence Collector Agent
+│
+▼
+Verification Agent
+│
+▼
+Hallucination Detection Agent
+│
+▼
+Report Generator Agent
+│
+▼
+Frontend Dashboard
+
+```
+
+---
+
+# 🤖 AI Agents
+
+## 🔍 1. Research Agent
+
+Responsibilities:
+
+- Understands user query
+- Searches trusted sources
+- Retrieves relevant documents
+- Filters useful information
+
+Sources:
+
+- Tavily Search
+- Wikipedia
+- PubMed
+- arXiv
+
+---
+
+## 📚 2. Evidence Collector & Verification Agent
+
+Responsibilities:
+
+- Collect evidence
+- Remove duplicate sources
+- Calculate trust score
+- Rank evidence
+
+Verification includes:
+
+- Source authority
+- Reliability
+- Relevance
+- Citation quality
+
+---
+
+## ⚖️ 3. Hallucination Detection Agent
+
+Responsibilities:
+
+- Compare evidence
+- Detect contradictions
+- Find unsupported claims
+- Estimate hallucination risk
+
+Outputs:
+
+- Supporting Evidence
+- Contradicting Evidence
+- Hallucination Score
+
+---
+
+## 📄 4. Report Generator Agent
+
+Responsibilities:
+
+- Generate summary
+- Produce confidence score
+- Create final verdict
+- Export downloadable PDF report
+
+---
+
+# ✨ Features
+
+- Multi-Agent AI Workflow
+- Fact Verification
+- Evidence Collection
+- Confidence Score
+- Trust Score Calculation
+- Hallucination Detection
+- Interactive Dashboard
+- Data Visualizations
+- PDF Report Generation
+- Explainable AI
+- Modern Responsive UI
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Axios
+- Recharts
+- React Icons
+
+---
+
+## Backend
+
+- FastAPI
+- Python
+- LangGraph
+- LangChain
+
+---
+
+## AI Models
+
+- OpenAI GPT
+- Tavily API
+
+---
+
+## Evidence Sources
+
+- Wikipedia
+- PubMed
+- arXiv
+- Tavily Search
+
+---
+
+# 📊 Dashboard Features
+
+- Confidence Gauge
+- Trust Distribution
+- Evidence Pie Chart
+- Source Ranking
+- Contradiction Analysis
+- Final Verdict
+- PDF Report Download
+
+---
+
+# 📂 Project Structure
+
+```
+
+truthforge-ai/
+│
+├── backend/
+│ ├── agents/
+│ ├── api/
+│ ├── workflows/
+│ └── main.py
+│
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── services/
+│ ├── charts/
+│ └── assets/
+│
+├── public/
+├── README.md
+└── package.json
+
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/truthforge-ai.git
+```
+
+## Backend
+
+```bash
+cd backend
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload
+```
+
+---
+
+## Frontend
 
 ```bash
 npm install
+
 npm run dev
 ```
 
-The app runs against a local **mock response** by default (`src/data/mockResponse.js`),
-so you can demo the full UI with zero backend.
+---
 
-## Wiring up the real backend
+# 🌐 Deployment
 
-1. Open `src/api/research.js`
-2. Set `USE_MOCK = false`
-3. Set `VITE_API_BASE_URL` in a `.env` file (see `.env.example`) to your backend URL
+Frontend
 
-The dashboard expects `POST /api/research` to return:
+- Netlify
 
-```json
-{
-  "question": "string",
-  "summary": "string",
-  "confidence": 92,
-  "verdict": "Highly Reliable | Partially Reliable | Needs Verification",
-  "timeline": [{ "id": 1, "label": "string", "detail": "string" }],
-  "claims": [
-    {
-      "id": "string",
-      "text": "string",
-      "status": "Verified | Contradicted | Unverified",
-      "confidence": 92,
-      "evidence": [
-        {
-          "id": "string",
-          "source": "string",
-          "type": "Government | Research Paper | News | Wikipedia | Blog",
-          "date": "ISO date string",
-          "url": "string",
-          "trustScore": 92,
-          "snippet": "string"
-        }
-      ]
-    }
-  ],
-  "sources": [{ "type": "string", "trust": 92, "count": 8 }],
-  "contradictions": [
-    { "id": "string", "claimA": "string", "claimB": "string", "severity": "High | Medium | Low", "explanation": "string" }
-  ],
-  "hallucinations": [
-    { "id": "string", "claim": "string", "detected": true, "riskScore": 76, "reason": "string" }
-  ],
-  "charts": {
-    "confidenceDistribution": [{ "name": "Verified", "value": 2 }],
-    "sourceTrust": [{ "name": "Government", "trust": 96 }],
-    "confidenceOverTime": [{ "stage": "Research", "confidence": 60 }]
-  }
-}
-```
+Backend
 
-## Folder structure
+- FastAPI
 
-```
-src/
-  api/            axios client + research endpoint call
-  components/     all dashboard sections + reusable ui/ primitives
-  context/        theme (dark/light) context
-  data/           mock backend response for local dev/demo
-  hooks/          useResearch state machine (idle/loading/success/error)
-  pages/          Dashboard page composing every section
-  utils/          formatting + shared helpers (truth-color spectrum, PDF/report builders)
-```
+---
 
-## Design system
+# 📷 Screenshots
 
-- **Palette**: near-black ink surfaces (`#07080C`–`#20232F`), indigo brand accent (`#6E56CF`),
-  and a consistent red→amber→emerald "truth spectrum" (`#F2495C` / `#F5A623` / `#2FD97F`) used
-  for every confidence, trust, and risk score in the app — one visual language for "how sure are we."
-- **Type**: Space Grotesk (display), Inter (UI/body), JetBrains Mono (scores, dates, source metadata).
-- **Surfaces**: glassmorphism panels (`backdrop-blur-xl` + translucent borders) over a soft
-  radial brand glow, with a subtle noise overlay for texture.
+### Home Page
+
+(Add Screenshot)
+
+---
+
+### Dashboard
+
+(Add Screenshot)
+
+---
+
+### Report
+
+(Add Screenshot)
+
+---
+
+### PDF Export
+
+(Add Screenshot)
+
+---
+
+# 📈 Workflow
+
+1. User enters claim
+2. Research Agent searches trusted sources
+3. Evidence Collector gathers information
+4. Verification Agent validates sources
+5. Hallucination Agent detects contradictions
+6. Report Agent generates verdict
+7. Dashboard visualizes results
+
+---
+
+# 🎯 Use Cases
+
+- Academic Research
+- Journalism
+- Healthcare Information
+- Scientific Verification
+- AI Fact Checking
+- Education
+
+---
+
+# 👥 Team
+
+| Name | Role |
+|------|------|
+| Member 1 | Research Agent |
+| Member 2 | Evidence Collector & Verification |
+| Member 3 | Hallucination Detection |
+| Member 4 | Frontend Dashboard & Report UI |
+
+---
+
+# 🔮 Future Scope
+
+- Voice Input
+- Multi-language Support
+- Browser Extension
+- Real-time Fact Checking
+- Citation Export
+- Live AI Reasoning
+- Knowledge Graph
+
+---
+
+# 🏆 Hackathon
+
+Developed for **InnovaHack Chapter 1**
+
+Theme:
+**AI-Powered Fact Verification using Multi-Agent Systems**
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# ❤️ Acknowledgements
+
+- OpenAI
+- LangChain
+- LangGraph
+- Tavily
+- FastAPI
+- React
+- Tailwind CSS
+
+---
+
+## ⭐ If you like this project, give it a star!
