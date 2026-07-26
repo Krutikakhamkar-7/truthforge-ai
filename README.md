@@ -224,7 +224,7 @@ truthforge-ai/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Krutikakhamkar-7/veritas.git
+git clone https://github.com/Krutikakhamkar-7/Veritas.git
 ```
 
 ## Backend
