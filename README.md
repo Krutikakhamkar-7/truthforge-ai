@@ -1,4 +1,4 @@
-# Veritas — Fact Verification Dashboard (Member 4)
+# Veritas — Fact Verification Dashboard 
 
 Frontend dashboard for the Autonomous Multi-Agent Research & Fact Verification System.
 This covers **only** the Report Generator + Frontend Dashboard responsibility — no
